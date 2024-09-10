@@ -5,7 +5,7 @@ def lr_api(length):
 	headers = { 'accept' : 'application/json' }
 	params = { 'length' : length }
 
-	response = requests.get('http://127.0.0.1:8001/fish_ml_regression', params=params, headers=headers)
+	response = requests.get('http://127.0.0.1:8080/how_weight/fish_ml_regression', params=params, headers=headers)
 	data = json.loads(response.text)
 	r = data['prediction']
 
@@ -14,7 +14,7 @@ def lr_api(length):
 def knn_api(length, weight, n_neighbors=5):
 	headers = { 'accept' : 'application/json' }
 	params = { 'n_neighbors' : n_neighbors, 'length' : length, 'weight' : weight }
-	response = requests.get('http://127.0.0.1:8001/fish_ml_regression', params=params, headers=headers)
+	response = requests.get('http://127.0.0.1:8080/kind_fish/fish', params=params, headers=headers)
 	data =  json.loads(response.text)
 	r = data['prediction']
 
